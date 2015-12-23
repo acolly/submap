@@ -7,7 +7,8 @@ TODO: - Use argpparse instead of argv
 try:
     script, target = argv
 except ValueError:
-    print "Error: Please specify a target."
+    print "Error: Please specify a target using 'python submap.py [target]' by replacing\n"
+    print "[target] with the target."
     exit()
 # Define info
 info = '''
@@ -40,7 +41,6 @@ def scan(hostname):
 
 def intro():
     print banner,info
-    #print info
 
 if __name__ == '__main__':
     intro()
