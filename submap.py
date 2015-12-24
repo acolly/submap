@@ -34,11 +34,12 @@ listedsubdomains = open('subs.txt').read().split()
 def scan(hostname):
     for hostname in listedsubdomains:
         try:
-            socket.gethostbyname(hostname+"."+target) # Try to gethostbyname without print to test
+            socket.gethostbyname(hostname+"."+target) # Try to gethostbyname without print
+                                                      # to test if it works
             print hostname+"."+target+"\n" # That way here we can print the url first
             print socket.gethostbyname(hostname+"."+target) # Actually print gethostbyname
         except socket.gaierror: # Handle it being an invalid subdomain
-            hostname = False # Just do something to avoid errors
+            hostname = False # Just do something to avoid more errors
         except KeyboardInterrupt as error: # Handle the KeyboardInterrupt separately
             print "\nScan interrupted by user."
             error = error
@@ -51,6 +52,7 @@ def scan(hostname):
 def intro():
     print banner,info
 
+# Finally just run it
 if __name__ == '__main__':
     intro()
     scan(target)
