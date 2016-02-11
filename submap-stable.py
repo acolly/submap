@@ -8,13 +8,13 @@ try:
     script, target = argv
 except ValueError:
     print "Error: Please specify a target using 'python submap.py [target]' by replacing" \
-          "[target] with the desired url."
+          " [target] with the desired url."
     exit()
 
 # Define info
 info = '''
 Author: Colly
-Version: 1.0
+Version: Stable - 1.0
 '''
 
 # Define the banner
@@ -34,19 +34,17 @@ listedsubdomains = open('subs.txt').read().split()
 def scan(hostname):
     for hostname in listedsubdomains:
         try:
-            socket.gethostbyname(hostname+"."+target) # Try to gethostbyname without print
-                                                      # to test if it works
+            socket.gethostbyname(hostname+"."+target) # Try to gethostbyname without print to test if it works
             print hostname+"."+target+"\n" # That way here we can print the url first
             print socket.gethostbyname(hostname+"."+target) # Actually print gethostbyname
         except socket.gaierror: # Handle it being an invalid subdomain
-            hostname = False # Just do something to avoid more errors
+            errorhandle1 = False # Just do something to avoid more errors
         except KeyboardInterrupt as error: # Handle the KeyboardInterrupt separately
             print "\nScan interrupted by user."
-            error = error
-            exit()
+            exit(3)
         except:
-            print "Unknown error. Please include the console log in your bug" \
-                  " report."
+            print "Unknown error. Please include the console log in your bug " \
+                  "report."
 
 # Define the intro() function
 def intro():
@@ -56,3 +54,5 @@ def intro():
 if __name__ == '__main__':
     intro()
     scan(target)
+    print "All subdomains scanned."
+    exit(0)
