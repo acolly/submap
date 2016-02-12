@@ -13,9 +13,9 @@ so just hit me up with an email.
 Features
 --------
 
-Submap is uses Python 2.7 and only uses builtin modules at
-the moment unless you use the experimental verision. It 
-takes the subdomains it needs to use from 'subs'.txt which 
+Submap  uses Python 2.7 and submap-stable only uses builtin modules at
+the moment unless you use the experimental version which uses dnspython. 
+It takes the subdomains it needs to use from 'subs'.txt which 
 contains a very extensive list, feel free to add more to it.
 
 The Latest Version
@@ -30,9 +30,14 @@ There is an experimental version of submap which I use for
 testing out new techniques and methods. Currently it supports
 custom nameservers, granular dns queries, improved error handling
 and target/nameserver validation. Eventually experimental 
-features will be incorporated into submap-stable. Development
-for submap-core is also underway and it will feature an 
-extremely compact version of submap.
+features will be incorporated into submap-stable. 
+
+Core
+----
+
+Submap core is a tiny and extremely compact version of submap. There
+are two versions of it: comment and unread. Comment is a readable
+version of the file whereas unread is far harder to read. 
 
 Basic Usage
 -----------
@@ -40,18 +45,20 @@ Basic Usage
 To use, simply ```cd``` to the directory with ```submap.py``` 
 and ```subs.txt```. Ensure that ```subs.txt``` is there. Then do
 ```python submap.py [target]``` and replace ```[target]``` 
-with the url you wish to scan. 
+with the url you wish to scan.
 
-For the experimental version
-there is one extra parameter you have to add: [nameserver]:
-```python submap-experimental.py [target] [nameserver]```.
+For the experimental version there is a ```nameserver``` flag
+you can use: ```python submap-experimental.py [-h] [-n NAMESERVER] target ```.
+The nameserver can be in url or IPv4 format though the target has to
+be a url.
 
 Documentation
 -------------
 
-Documentation is currently under development. When it is
-finished it will most likely be located at the url given:
-'colly.gitub.io/submap/doc'.
+Documentation is currently under development though it isn't a priority. 
+When it is finished it will most likely be located at the url given:
+'colly.gitub.io/submap/doc'. There is a rough document called DEVINFO
+which can be used in the meantime.
 
 Installation
 ------------

@@ -8,7 +8,6 @@ Multiple targets for efficiency
 Multiple dns requests to speed it up
 Make a stripped down "core" version
 Ouput errors to an external logfile
-Implement argparse
 
 Exit Codes
 ----------
@@ -24,4 +23,5 @@ Experimental
 Errors dns.resolver.NoAnswer & dns.resolver.NoNameservers
 can be safely ignored silently. They maybe want to
 be logged to an external file to judge reliablity
-of the nameserver at a future date.
+of the nameserver at a future date. Note the results you 
+get are based on what nameserver you use to a large degree.
