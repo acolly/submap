@@ -14,9 +14,9 @@ Features
 --------
 
 Submap  uses Python 2.7 and submap-stable only uses builtin modules at
-the moment unless you use the experimental version which uses dnspython. 
-It takes the subdomains it needs to use from 'subs'.txt which 
-contains a very extensive list, feel free to add more to it.
+the moment unless you use the experimental version which uses Python 3.5 
+and dnspython. It takes the subdomains it needs to use from 'subs'.txt 
+which contains a very extensive list, feel free to add more to it.
 
 The Latest Version
 ------------------

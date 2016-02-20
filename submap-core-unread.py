@@ -1,32 +1,14 @@
 import socket,sys
-try:
-    script, t = sys.argv
-except ValueError:
-    print "Error: Please see basic usage in README.md"
-    exit()
-i = '''
-Author: Colly
-Version: Core - 1.0
-'''
 b = '''
 Subdomain Finder
-    By Colly
+By Colly
+Author:Colly
+Version:Core-1.0
 '''
-ls = open('subs.txt').read().split()
-def sc(hostname):
-    for ho in ls:
+def sc(t):
+    for h in open('subs.txt').read().split():
         try:
-            k = socket.gethostbyname(ho+"."+t)
-            print ho+"."+t
-            print socket.gethostbyname(ho+"."+t+"\n")
+            socket.gethostbyname(h+'.'+t);print h+'.'+t;print socket.gethostbyname(h+"."+t+"\n")
         except socket.gaierror:
-            False
-        except KeyboardInterrupt:
-            print "\nScan interrupted by user."
-            exit()
-print b,i
-try:
-    sc(t)
-except KeyboardInterrupt:
-    print "\nScan interrupted by user."
-    exit(3)
+            pass
+print b;sc(sys.argv[1])

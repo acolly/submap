@@ -8,6 +8,7 @@ Multiple targets for efficiency
 Multiple dns requests to speed it up
 Make a stripped down "core" version
 Ouput errors to an external logfile
+In experimental if there is a timeout or noserver error it won't redo that subdomia
 
 Exit Codes
 ----------
@@ -17,6 +18,7 @@ Exit Codes
 4 : no internet connecton
 5 : target specified is invalid
 6 : invalid nameserver
+7 : unknown error
 
 Experimental
 ------------
