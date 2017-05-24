@@ -14,9 +14,9 @@ Features
 --------
 
 Submap  uses Python 2.7 and submap-stable only uses builtin modules at
-the moment unless you use the experimental version which uses Python 3.5 
-and dnspython. It takes the subdomains it needs to use from 'subs'.txt 
-which contains a very extensive list, feel free to add more to it.
+the moment unless you use the experimental version which uses dnspython.
+It takes the subdomains it needs to use from 'subs'.txt which contains
+a very extensive list, feel free to add more to it.
 
 The Latest Version
 ------------------
@@ -52,13 +52,6 @@ you can use: ```python submap-experimental.py [-h] [-n NAMESERVER] target ```.
 The nameserver can be in url or IPv4 format though the target has to
 be a url.
 
-Documentation
--------------
-
-Documentation is currently under development though it isn't a priority. 
-When it is finished it will most likely be located at the url given:
-'colly.gitub.io/submap/doc'. There is a rough document called DEVINFO
-which can be used in the meantime.
 
 Installation
 ------------

@@ -35,7 +35,8 @@ banner = '''
 listedsubdomains = open('subs.txt').read().split()
 
 def intro(): # Simple wrapper to save space
-    print(banner,info)
+    print(banner)
+    print(info)
 
 def validate(vtarget, vspecns): # Put a 'v' to clarify variables
     try:
@@ -61,13 +62,11 @@ def scan(target, ns):
             myResolver.query(chosensub+target, "A") # Verify if the chosen subdomain exists
             print("[*] " + chosensub + '.' + target)
         except dns.resolver.NXDOMAIN:
-            False # Boolean filler
+            pass # Boolean filler
         except dns.resolver.NoAnswer:
-            print("No Answer")
-            False # Should be safe to silently ignore
+            pass # Should be safe to silently ignore
         except dns.resolver.NoNameservers:
-            print("No Name Servers")
-            False # Also is safe to silently ignore
+            pass # Also is safe to silently ignore
 
 
 if __name__ == "__main__":

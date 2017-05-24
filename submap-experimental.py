@@ -33,25 +33,26 @@ class submap(object):
         self.args = self.parser.parse_args()
 
     def intro(self):
-        print(self.banner,self.info)
+        print(self.banner)
+        print(self.info)
 
     def logging_intro(self):
         self.logcont = open(self.args.logname+".log", "w")
         self.logcont.write(self.banner+self.info)
 
     def validate(self,vtarget, vspecns): # Put a 'v' to clarify variables
+        vtargtrue = False # Create a base value to avoid errors
         try:
-            vtargtrue = False # Create a base value to avoid errors
             socket.gethostbyname(vtarget) # Attempt to resolve the target
             vtargtrue = True # Say that target is valid
             if self.args.nameserver != None:
                 socket.gethostbyname(vspecns) # Attempt to resolve the nameserver
         except socket.gaierror:
             if vtargtrue == True: # Check if earlier step is true
-                False
+                pass
                 exit(5)
             else:
-                False
+                pass
                 exit(6)
         if self.args.logname != None: # Check if the logging was chosen to avoid wasting time
             while ".log" in self.args.logname:
